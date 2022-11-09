@@ -1,32 +1,33 @@
 import java.util.Scanner;
 
-public class Colloq {
+public class Colloq
+{
     public static Integer size;
+    public static Scanner cin = new Scanner(System.in);
     public static boolean isInt(String str) {
-        try {
+        try
+        {
             Integer.parseInt(str);
             return true;
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e)
+        {
             return false;
         }
     }
-    public static boolean isDouble(String str) {
-        try {
+    public static boolean isDouble(String str)
+    {
+        try
+        {
             Double.parseDouble(str);
             return true;
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e)
+        {
             return false;
         }
     }
-    public static void main(String[] args)
+    public static String result(String str1, String str2)
     {
-        Scanner cin = new Scanner(System.in);
-
-        String str1 = cin.next();
-        String str2 = cin.next();
-
-        if(isInt(str1)|| isDouble(str1))
-        {
+        if(isInt(str1)|| isDouble(str1)){
             while(isInt(str1) || isDouble(str1))
             {
                 System.out.println("The first line shouldn't be a number. Enter a new line.");
@@ -35,72 +36,57 @@ public class Colloq {
             if(isInt(str2) && !isDouble(str2))
             {
                 size = Integer.parseInt(str2);
-                if(size > 0)
-                {
+                if(size > 0) {
                     String temp = str1;
-                    for (int i = 1; i < size; i++)
-                    {
+                    for (int i = 1; i < size; i++) {
                         str1 += temp;
                     }
                 }
                 else if(size == 0) str1 = "";
-                else if(size < 0)
-                {
-                    while(size < 0)
-                    {
+                else if(size < 0){
+                    while(size < 0) {
                         System.out.println("The number cannot be less than zero. Enter a new number or string.");
                         str2 = cin.next();
                         if(isInt(str2)) {
                             size = Integer.parseInt(str2);
                         }
-                        else
-                        {
+                        else {
                             size = -1;
                             break;
                         }
                     }
-                    if(size == -1)
-                    {
+                    if(size == -1){
                         str1 += str2;
                     }
                     else if(size == 0) str1 = "";
                     else
                     {
                         String temp = str1;
-                        for (int i = 1; i < size; i++)
-                        {
+                        for (int i = 1; i < size; i++) {
                             str1 += temp;
                         }
                     }
                 }
             }
-            else if(isDouble(str2))
-            {
-                while(isDouble(str2) && !isInt(str2))
-                {
+            else if(isDouble(str2)){
+                while(isDouble(str2) && !isInt(str2)){
                     System.out.println("The entered number must be an integer. Enter a new number or string.");
                     str2 = cin.next();
                 }
-                if(isInt(str2))
-                {
+                if(isInt(str2)){
                     size = Integer.parseInt(str2);
-                    if(size > 0)
-                    {
+                    if(size > 0) {
                         String temp = str1;
-                        for (int i = 1; i < size; i++)
-                        {
+                        for (int i = 1; i < size; i++) {
                             str1 += temp;
                         }
                     }
                     else if(size == 0) str1 = "";
-                    else if(size < 0)
-                    {
-                        while(size < 0)
-                        {
+                    else if(size < 0){
+                        while(size < 0) {
                             System.out.println("The number cannot be less than zero. Enter a new number or string.");
                             str2 = cin.next();
-                            if(isInt(str2))
-                            {
+                            if(isInt(str2)) {
                                 size = Integer.parseInt(str2);
                             }
                             else {
@@ -108,15 +94,13 @@ public class Colloq {
                                 break;
                             }
                         }
-                        if(size == -1)
-                        {
+                        if(size == -1){
                             str1 += str2;
                         }
                         else if(size == 0) str1 = "";
                         else {
                             String temp = str1;
-                            for (int i = 1; i < size; i++)
-                            {
+                            for (int i = 1; i < size; i++) {
                                 str1 += temp;
                             }
                         }
@@ -130,23 +114,20 @@ public class Colloq {
                 str1 += str2;
             }
         }
-        else if(isInt(str2) && !isDouble(str2))
-        {
+        else if(isInt(str2) && !isDouble(str2)){
             size = Integer.parseInt(str2);
             if(size > 0) {
                 String temp = str1;
-                for (int i = 1; i < size; i++)
-                {
+                for (int i = 1; i < size; i++) {
                     str1 += temp;
                 }
             }
             else if(size == 0) str1 = "";
             else if(size < 0){
                 while(size < 0) {
-                    System.out.println("Число не может быть меньше нуля. Введите новое число или строку.");
+                    System.out.println("ЧThe number cannot be less than zero. Enter a new number or string.");
                     str2 = cin.next();
-                    if(isInt(str2))
-                    {
+                    if(isInt(str2)) {
                         size = Integer.parseInt(str2);
                     }
                     else {
@@ -154,25 +135,20 @@ public class Colloq {
                         break;
                     }
                 }
-                if(size == -1)
-                {
+                if(size == -1){
                     str1 += str2;
                 }
                 else if(size == 0) str1 = "";
-                else
-                {
+                else {
                     String temp = str1;
-                    for (int i = 1; i < size; i++)
-                    {
+                    for (int i = 1; i < size; i++) {
                         str1 += temp;
                     }
                 }
             }
         }
-        else if(isDouble(str2))
-        {
-            while(isDouble(str2) && !isInt(str2))
-            {
+        else if(isDouble(str2)){
+            while(isDouble(str2) && !isInt(str2)){
                 System.out.println("The entered number must be an integer. Enter a new number or string.");
                 str2 = cin.next();
             }
@@ -180,8 +156,7 @@ public class Colloq {
                 size = Integer.parseInt(str2);
                 if(size > 0) {
                     String temp = str1;
-                    for (int i = 1; i < size; i++)
-                    {
+                    for (int i = 1; i < size; i++) {
                         str1 += temp;
                     }
                 }
@@ -193,8 +168,7 @@ public class Colloq {
                         if(isInt(str2)) {
                             size = Integer.parseInt(str2);
                         }
-                        else
-                        {
+                        else {
                             size = -1;
                             break;
                         }
@@ -205,8 +179,7 @@ public class Colloq {
                     else if(size == 0) str1 = "";
                     else {
                         String temp = str1;
-                        for (int i = 1; i < size; i++)
-                        {
+                        for (int i = 1; i < size; i++) {
                             str1 += temp;
                         }
                     }
@@ -216,6 +189,14 @@ public class Colloq {
         else {
             str1 += str2;
         }
-        System.out.println(str1);
+        return str1;
+    }
+
+    public static void main(String[] args)
+    {
+        String str1 = cin.next();
+        String str2 = cin.next();
+        String str = result(str1, str2);
+        System.out.println(str);
     }
 }
